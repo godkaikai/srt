@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.srt.dao.courseMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.course" >
+    <constructor >
+      <idArg column="courseid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="coursename" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="courseroom" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="beginandend" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="courseweekday" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="coursesection" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="courseindex" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="studentnums" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="studytime" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="credits" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="rundection" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="teachername" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="useclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    courseid, coursename, courseroom, beginandend, courseweekday, coursesection, courseindex, 
+    studentnums, studytime, credits, rundection, teachername, useclass
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from course_info
+    where courseid = #{courseid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from course_info
+    where courseid = #{courseid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.srt.entity.course" >
+    insert into course_info (courseid, coursename, courseroom, 
+      beginandend, courseweekday, coursesection, 
+      courseindex, studentnums, studytime, 
+      credits, rundection, teachername, 
+      useclass)
+    values (#{courseid,jdbcType=VARCHAR}, #{coursename,jdbcType=VARCHAR}, #{courseroom,jdbcType=VARCHAR}, 
+      #{beginandend,jdbcType=INTEGER}, #{courseweekday,jdbcType=INTEGER}, #{coursesection,jdbcType=INTEGER}, 
+      #{courseindex,jdbcType=INTEGER}, #{studentnums,jdbcType=INTEGER}, #{studytime,jdbcType=INTEGER}, 
+      #{credits,jdbcType=REAL}, #{rundection,jdbcType=INTEGER}, #{teachername,jdbcType=VARCHAR}, 
+      #{useclass,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.srt.entity.course" >
+    insert into course_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="courseid != null" >
+        courseid,
+      </if>
+      <if test="coursename != null" >
+        coursename,
+      </if>
+      <if test="courseroom != null" >
+        courseroom,
+      </if>
+      <if test="beginandend != null" >
+        beginandend,
+      </if>
+      <if test="courseweekday != null" >
+        courseweekday,
+      </if>
+      <if test="coursesection != null" >
+        coursesection,
+      </if>
+      <if test="courseindex != null" >
+        courseindex,
+      </if>
+      <if test="studentnums != null" >
+        studentnums,
+      </if>
+      <if test="studytime != null" >
+        studytime,
+      </if>
+      <if test="credits != null" >
+        credits,
+      </if>
+      <if test="rundection != null" >
+        rundection,
+      </if>
+      <if test="teachername != null" >
+        teachername,
+      </if>
+      <if test="useclass != null" >
+        useclass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="courseid != null" >
+        #{courseid,jdbcType=VARCHAR},
+      </if>
+      <if test="coursename != null" >
+        #{coursename,jdbcType=VARCHAR},
+      </if>
+      <if test="courseroom != null" >
+        #{courseroom,jdbcType=VARCHAR},
+      </if>
+      <if test="beginandend != null" >
+        #{beginandend,jdbcType=INTEGER},
+      </if>
+      <if test="courseweekday != null" >
+        #{courseweekday,jdbcType=INTEGER},
+      </if>
+      <if test="coursesection != null" >
+        #{coursesection,jdbcType=INTEGER},
+      </if>
+      <if test="courseindex != null" >
+        #{courseindex,jdbcType=INTEGER},
+      </if>
+      <if test="studentnums != null" >
+        #{studentnums,jdbcType=INTEGER},
+      </if>
+      <if test="studytime != null" >
+        #{studytime,jdbcType=INTEGER},
+      </if>
+      <if test="credits != null" >
+        #{credits,jdbcType=REAL},
+      </if>
+      <if test="rundection != null" >
+        #{rundection,jdbcType=INTEGER},
+      </if>
+      <if test="teachername != null" >
+        #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="useclass != null" >
+        #{useclass,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.course" >
+    update course_info
+    <set >
+      <if test="coursename != null" >
+        coursename = #{coursename,jdbcType=VARCHAR},
+      </if>
+      <if test="courseroom != null" >
+        courseroom = #{courseroom,jdbcType=VARCHAR},
+      </if>
+      <if test="beginandend != null" >
+        beginandend = #{beginandend,jdbcType=INTEGER},
+      </if>
+      <if test="courseweekday != null" >
+        courseweekday = #{courseweekday,jdbcType=INTEGER},
+      </if>
+      <if test="coursesection != null" >
+        coursesection = #{coursesection,jdbcType=INTEGER},
+      </if>
+      <if test="courseindex != null" >
+        courseindex = #{courseindex,jdbcType=INTEGER},
+      </if>
+      <if test="studentnums != null" >
+        studentnums = #{studentnums,jdbcType=INTEGER},
+      </if>
+      <if test="studytime != null" >
+        studytime = #{studytime,jdbcType=INTEGER},
+      </if>
+      <if test="credits != null" >
+        credits = #{credits,jdbcType=REAL},
+      </if>
+      <if test="rundection != null" >
+        rundection = #{rundection,jdbcType=INTEGER},
+      </if>
+      <if test="teachername != null" >
+        teachername = #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="useclass != null" >
+        useclass = #{useclass,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where courseid = #{courseid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.course" >
+    update course_info
+    set coursename = #{coursename,jdbcType=VARCHAR},
+      courseroom = #{courseroom,jdbcType=VARCHAR},
+      beginandend = #{beginandend,jdbcType=INTEGER},
+      courseweekday = #{courseweekday,jdbcType=INTEGER},
+      coursesection = #{coursesection,jdbcType=INTEGER},
+      courseindex = #{courseindex,jdbcType=INTEGER},
+      studentnums = #{studentnums,jdbcType=INTEGER},
+      studytime = #{studytime,jdbcType=INTEGER},
+      credits = #{credits,jdbcType=REAL},
+      rundection = #{rundection,jdbcType=INTEGER},
+      teachername = #{teachername,jdbcType=VARCHAR},
+      useclass = #{useclass,jdbcType=VARCHAR}
+    where courseid = #{courseid,jdbcType=VARCHAR}
+  </update>
+</mapper>

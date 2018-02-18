@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.srt.dao.roomMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.room" >
+    <constructor >
+      <idArg column="roomid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="roomsize" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="roomuse" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="roomequipment" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="roomposition" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="note" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    roomid, roomsize, roomuse, roomequipment, roomposition, note
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from room_info
+    where roomid = #{roomid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from room_info
+    where roomid = #{roomid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.srt.entity.room" >
+    insert into room_info (roomid, roomsize, roomuse, 
+      roomequipment, roomposition, note
+      )
+    values (#{roomid,jdbcType=VARCHAR}, #{roomsize,jdbcType=VARCHAR}, #{roomuse,jdbcType=VARCHAR}, 
+      #{roomequipment,jdbcType=VARCHAR}, #{roomposition,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.srt.entity.room" >
+    insert into room_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roomid != null" >
+        roomid,
+      </if>
+      <if test="roomsize != null" >
+        roomsize,
+      </if>
+      <if test="roomuse != null" >
+        roomuse,
+      </if>
+      <if test="roomequipment != null" >
+        roomequipment,
+      </if>
+      <if test="roomposition != null" >
+        roomposition,
+      </if>
+      <if test="note != null" >
+        note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roomid != null" >
+        #{roomid,jdbcType=VARCHAR},
+      </if>
+      <if test="roomsize != null" >
+        #{roomsize,jdbcType=VARCHAR},
+      </if>
+      <if test="roomuse != null" >
+        #{roomuse,jdbcType=VARCHAR},
+      </if>
+      <if test="roomequipment != null" >
+        #{roomequipment,jdbcType=VARCHAR},
+      </if>
+      <if test="roomposition != null" >
+        #{roomposition,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.room" >
+    update room_info
+    <set >
+      <if test="roomsize != null" >
+        roomsize = #{roomsize,jdbcType=VARCHAR},
+      </if>
+      <if test="roomuse != null" >
+        roomuse = #{roomuse,jdbcType=VARCHAR},
+      </if>
+      <if test="roomequipment != null" >
+        roomequipment = #{roomequipment,jdbcType=VARCHAR},
+      </if>
+      <if test="roomposition != null" >
+        roomposition = #{roomposition,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null" >
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where roomid = #{roomid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.room" >
+    update room_info
+    set roomsize = #{roomsize,jdbcType=VARCHAR},
+      roomuse = #{roomuse,jdbcType=VARCHAR},
+      roomequipment = #{roomequipment,jdbcType=VARCHAR},
+      roomposition = #{roomposition,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR}
+    where roomid = #{roomid,jdbcType=VARCHAR}
+  </update>
+</mapper>

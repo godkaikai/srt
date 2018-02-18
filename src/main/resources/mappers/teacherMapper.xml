@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.srt.dao.teacherMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.teacher" >
+    <constructor >
+      <idArg column="teacherid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teachername" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teachersex" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teachercollege" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teacherteach" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teacherposition" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teacherphone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    teacherid, teachername, teachersex, teachercollege, teacherteach, teacherposition, 
+    teacherphone, password
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from teacher_info
+    where teacherid = #{teacherid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from teacher_info
+    where teacherid = #{teacherid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.srt.entity.teacher" >
+    insert into teacher_info (teacherid, teachername, teachersex, 
+      teachercollege, teacherteach, teacherposition, 
+      teacherphone, password)
+    values (#{teacherid,jdbcType=VARCHAR}, #{teachername,jdbcType=VARCHAR}, #{teachersex,jdbcType=VARCHAR}, 
+      #{teachercollege,jdbcType=VARCHAR}, #{teacherteach,jdbcType=VARCHAR}, #{teacherposition,jdbcType=VARCHAR}, 
+      #{teacherphone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.srt.entity.teacher" >
+    insert into teacher_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="teacherid != null" >
+        teacherid,
+      </if>
+      <if test="teachername != null" >
+        teachername,
+      </if>
+      <if test="teachersex != null" >
+        teachersex,
+      </if>
+      <if test="teachercollege != null" >
+        teachercollege,
+      </if>
+      <if test="teacherteach != null" >
+        teacherteach,
+      </if>
+      <if test="teacherposition != null" >
+        teacherposition,
+      </if>
+      <if test="teacherphone != null" >
+        teacherphone,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="teacherid != null" >
+        #{teacherid,jdbcType=VARCHAR},
+      </if>
+      <if test="teachername != null" >
+        #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="teachersex != null" >
+        #{teachersex,jdbcType=VARCHAR},
+      </if>
+      <if test="teachercollege != null" >
+        #{teachercollege,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherteach != null" >
+        #{teacherteach,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherposition != null" >
+        #{teacherposition,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherphone != null" >
+        #{teacherphone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.teacher" >
+    update teacher_info
+    <set >
+      <if test="teachername != null" >
+        teachername = #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="teachersex != null" >
+        teachersex = #{teachersex,jdbcType=VARCHAR},
+      </if>
+      <if test="teachercollege != null" >
+        teachercollege = #{teachercollege,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherteach != null" >
+        teacherteach = #{teacherteach,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherposition != null" >
+        teacherposition = #{teacherposition,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherphone != null" >
+        teacherphone = #{teacherphone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where teacherid = #{teacherid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.teacher" >
+    update teacher_info
+    set teachername = #{teachername,jdbcType=VARCHAR},
+      teachersex = #{teachersex,jdbcType=VARCHAR},
+      teachercollege = #{teachercollege,jdbcType=VARCHAR},
+      teacherteach = #{teacherteach,jdbcType=VARCHAR},
+      teacherposition = #{teacherposition,jdbcType=VARCHAR},
+      teacherphone = #{teacherphone,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR}
+    where teacherid = #{teacherid,jdbcType=VARCHAR}
+  </update>
+</mapper>
