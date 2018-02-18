@@ -1,16 +1,16 @@
 package com.srt.entity;
 
-public class studyroom {
+public class StudyRoom {
     private String roomid;
 
     private String roomsize;
 
-    public studyroom(String roomid, String roomsize) {
+    public StudyRoom(String roomid, String roomsize) {
         this.roomid = roomid;
         this.roomsize = roomsize;
     }
 
-    public studyroom() {
+    public StudyRoom() {
         super();
     }
 

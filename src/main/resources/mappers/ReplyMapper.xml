@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.srt.dao.replyMapper" >
-  <resultMap id="BaseResultMap" type="com.srt.entity.reply" >
+<mapper namespace="com.srt.dao.ReplyMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.Reply" >
     <constructor >
       <idArg column="reid" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="result" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -24,7 +24,7 @@
     delete from reply_info
     where reid = #{reid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.srt.entity.reply" >
+  <insert id="insert" parameterType="com.srt.entity.Reply" >
     insert into reply_info (reid, result, reason, 
       code, id, settime
       )
@@ -32,7 +32,7 @@
       #{code,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR}, #{settime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.srt.entity.reply" >
+  <insert id="insertSelective" parameterType="com.srt.entity.Reply" >
     insert into reply_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="reid != null" >
@@ -75,7 +75,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.reply" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.Reply" >
     update reply_info
     <set >
       <if test="result != null" >
@@ -96,7 +96,7 @@
     </set>
     where reid = #{reid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.srt.entity.reply" >
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.Reply" >
     update reply_info
     set result = #{result,jdbcType=VARCHAR},
       reason = #{reason,jdbcType=VARCHAR},

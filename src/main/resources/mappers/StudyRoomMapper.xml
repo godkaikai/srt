@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.srt.dao.studyroomMapper" >
-  <resultMap id="BaseResultMap" type="com.srt.entity.studyroom" >
+<mapper namespace="com.srt.dao.StudyRoomMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.StudyRoom" >
     <constructor >
       <idArg column="roomid" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="roomsize" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -20,11 +20,11 @@
     delete from studyroom_info
     where roomid = #{roomid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.srt.entity.studyroom" >
+  <insert id="insert" parameterType="com.srt.entity.StudyRoom" >
     insert into studyroom_info (roomid, roomsize)
     values (#{roomid,jdbcType=VARCHAR}, #{roomsize,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.srt.entity.studyroom" >
+  <insert id="insertSelective" parameterType="com.srt.entity.StudyRoom" >
     insert into studyroom_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="roomid != null" >
@@ -43,7 +43,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.studyroom" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.StudyRoom" >
     update studyroom_info
     <set >
       <if test="roomsize != null" >
@@ -52,7 +52,7 @@
     </set>
     where roomid = #{roomid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.srt.entity.studyroom" >
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.StudyRoom" >
     update studyroom_info
     set roomsize = #{roomsize,jdbcType=VARCHAR}
     where roomid = #{roomid,jdbcType=VARCHAR}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.srt.dao.courseMapper" >
-  <resultMap id="BaseResultMap" type="com.srt.entity.course" >
+<mapper namespace="com.srt.dao.CourseMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.Course" >
     <constructor >
       <idArg column="courseid" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="coursename" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -32,7 +32,7 @@
     delete from course_info
     where courseid = #{courseid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.srt.entity.course" >
+  <insert id="insert" parameterType="com.srt.entity.Course" >
     insert into course_info (courseid, coursename, courseroom, 
       beginandend, courseweekday, coursesection, 
       courseindex, studentnums, studytime, 
@@ -44,7 +44,7 @@
       #{credits,jdbcType=REAL}, #{rundection,jdbcType=INTEGER}, #{teachername,jdbcType=VARCHAR}, 
       #{useclass,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.srt.entity.course" >
+  <insert id="insertSelective" parameterType="com.srt.entity.Course" >
     insert into course_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="courseid != null" >
@@ -129,7 +129,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.course" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.Course" >
     update course_info
     <set >
       <if test="coursename != null" >
@@ -171,7 +171,7 @@
     </set>
     where courseid = #{courseid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.srt.entity.course" >
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.Course" >
     update course_info
     set coursename = #{coursename,jdbcType=VARCHAR},
       courseroom = #{courseroom,jdbcType=VARCHAR},

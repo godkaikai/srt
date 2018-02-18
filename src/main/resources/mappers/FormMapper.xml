@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.srt.dao.formMapper" >
-  <resultMap id="BaseResultMap" type="com.srt.entity.form" >
+<mapper namespace="com.srt.dao.FormMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.Form" >
     <constructor >
       <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -30,7 +30,7 @@
     delete from form_info
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.srt.entity.form" >
+  <insert id="insert" parameterType="com.srt.entity.Form" >
     insert into form_info (id, name, behalf, 
       roomsize, roomequipment, useday, 
       usetime, reason, phone, 
@@ -40,7 +40,7 @@
       #{usetime,jdbcType=INTEGER}, #{reason,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
       #{state,jdbcType=VARCHAR}, #{settime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.srt.entity.form" >
+  <insert id="insertSelective" parameterType="com.srt.entity.Form" >
     insert into form_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -113,7 +113,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.form" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.Form" >
     update form_info
     <set >
       <if test="name != null" >
@@ -149,7 +149,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.srt.entity.form" >
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.Form" >
     update form_info
     set name = #{name,jdbcType=VARCHAR},
       behalf = #{behalf,jdbcType=VARCHAR},

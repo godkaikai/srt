@@ -1,6 +1,6 @@
 package com.srt.entity;
 
-public class course {
+public class Course {
     private String courseid;
 
     private String coursename;
@@ -27,7 +27,7 @@ public class course {
 
     private String useclass;
 
-    public course(String courseid, String coursename, String courseroom, Integer beginandend, Integer courseweekday, Integer coursesection, Integer courseindex, Integer studentnums, Integer studytime, Float credits, Integer rundection, String teachername, String useclass) {
+    public Course(String courseid, String coursename, String courseroom, Integer beginandend, Integer courseweekday, Integer coursesection, Integer courseindex, Integer studentnums, Integer studytime, Float credits, Integer rundection, String teachername, String useclass) {
         this.courseid = courseid;
         this.coursename = coursename;
         this.courseroom = courseroom;
@@ -43,7 +43,7 @@ public class course {
         this.useclass = useclass;
     }
 
-    public course() {
+    public Course() {
         super();
     }
 

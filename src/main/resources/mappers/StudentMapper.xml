@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.srt.dao.studentMapper" >
-  <resultMap id="BaseResultMap" type="com.srt.entity.student" >
+<mapper namespace="com.srt.dao.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.Student" >
     <constructor >
       <idArg column="studentid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -34,7 +34,7 @@
     delete from student_info
     where studentid = #{studentid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.srt.entity.student" >
+  <insert id="insert" parameterType="com.srt.entity.Student" >
     insert into student_info (studentid, name, state, 
       sex, idcard, college, 
       major, class, phone, 
@@ -48,7 +48,7 @@
       #{updatetime,jdbcType=TIMESTAMP}, #{logintime,jdbcType=TIMESTAMP}, #{note,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.srt.entity.student" >
+  <insert id="insertSelective" parameterType="com.srt.entity.Student" >
     insert into student_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="studentid != null" >
@@ -145,7 +145,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.student" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.Student" >
     update student_info
     <set >
       <if test="name != null" >
@@ -193,7 +193,7 @@
     </set>
     where studentid = #{studentid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.srt.entity.student" >
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.Student" >
     update student_info
     set name = #{name,jdbcType=VARCHAR},
       state = #{state,jdbcType=VARCHAR},

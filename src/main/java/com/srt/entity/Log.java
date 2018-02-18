@@ -1,6 +1,6 @@
 package com.srt.entity;
 
-public class log {
+public class Log {
     private String id;
 
     private String adminid;
@@ -11,7 +11,7 @@ public class log {
 
     private String time;
 
-    public log(String id, String adminid, String state, String note, String time) {
+    public Log(String id, String adminid, String state, String note, String time) {
         this.id = id;
         this.adminid = adminid;
         this.state = state;
@@ -19,7 +19,7 @@ public class log {
         this.time = time;
     }
 
-    public log() {
+    public Log() {
         super();
     }
 

@@ -1,6 +1,6 @@
 package com.srt.entity;
 
-public class room {
+public class Room {
     private String roomid;
 
     private String roomsize;
@@ -13,7 +13,7 @@ public class room {
 
     private String note;
 
-    public room(String roomid, String roomsize, String roomuse, String roomequipment, String roomposition, String note) {
+    public Room(String roomid, String roomsize, String roomuse, String roomequipment, String roomposition, String note) {
         this.roomid = roomid;
         this.roomsize = roomsize;
         this.roomuse = roomuse;
@@ -22,7 +22,7 @@ public class room {
         this.note = note;
     }
 
-    public room() {
+    public Room() {
         super();
     }
 

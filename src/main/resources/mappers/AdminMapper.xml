@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.srt.dao.adminMapper" >
-  <resultMap id="BaseResultMap" type="com.srt.entity.admin" >
+<mapper namespace="com.srt.dao.AdminMapper" >
+  <resultMap id="BaseResultMap" type="com.srt.entity.Admin" >
     <constructor >
       <idArg column="adminid" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -28,7 +28,7 @@
     delete from admin_info
     where adminid = #{adminid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.srt.entity.admin" >
+  <insert id="insert" parameterType="com.srt.entity.Admin" >
     insert into admin_info (adminid, name, level, 
       phone, password, state, 
       creattime, updatetime, logintime, 
@@ -38,7 +38,7 @@
       #{creattime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{logintime,jdbcType=TIMESTAMP}, 
       #{note,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.srt.entity.admin" >
+  <insert id="insertSelective" parameterType="com.srt.entity.Admin" >
     insert into admin_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="adminid != null" >
@@ -105,7 +105,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.admin" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.srt.entity.Admin" >
     update admin_info
     <set >
       <if test="name != null" >
@@ -138,7 +138,7 @@
     </set>
     where adminid = #{adminid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.srt.entity.admin" >
+  <update id="updateByPrimaryKey" parameterType="com.srt.entity.Admin" >
     update admin_info
     set name = #{name,jdbcType=VARCHAR},
       level = #{level,jdbcType=VARCHAR},

@@ -2,7 +2,7 @@ package com.srt.entity;
 
 import java.util.Date;
 
-public class form {
+public class Form {
     private String id;
 
     private String name;
@@ -25,7 +25,7 @@ public class form {
 
     private Date settime;
 
-    public form(String id, String name, String behalf, String roomsize, String roomequipment, Integer useday, Integer usetime, String reason, String phone, String state, Date settime) {
+    public Form(String id, String name, String behalf, String roomsize, String roomequipment, Integer useday, Integer usetime, String reason, String phone, String state, Date settime) {
         this.id = id;
         this.name = name;
         this.behalf = behalf;
@@ -39,7 +39,7 @@ public class form {
         this.settime = settime;
     }
 
-    public form() {
+    public Form() {
         super();
     }
 

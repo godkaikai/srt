@@ -2,7 +2,7 @@ package com.srt.entity;
 
 import java.util.Date;
 
-public class student {
+public class Student {
     private Integer studentid;
 
     private String name;
@@ -33,7 +33,7 @@ public class student {
 
     private String note;
 
-    public student(Integer studentid, String name, String state, String sex, String idcard, String college, String major, String class, String phone, String email, String password, Date creattime, Date updatetime, Date logintime, String note) {
+    public Student(Integer studentid, String name, String state, String sex, String idcard, String college, String major, String class, String phone, String email, String password, Date creattime, Date updatetime, Date logintime, String note) {
         this.studentid = studentid;
         this.name = name;
         this.state = state;
@@ -51,7 +51,7 @@ public class student {
         this.note = note;
     }
 
-    public student() {
+    public Student() {
         super();
     }
 

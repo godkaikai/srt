@@ -2,7 +2,7 @@ package com.srt.entity;
 
 import java.util.Date;
 
-public class admin {
+public class Admin {
     private String adminid;
 
     private String name;
@@ -23,7 +23,7 @@ public class admin {
 
     private String note;
 
-    public admin(String adminid, String name, String level, String phone, String password, String state, Date creattime, Date updatetime, Date logintime, String note) {
+    public Admin(String adminid, String name, String level, String phone, String password, String state, Date creattime, Date updatetime, Date logintime, String note) {
         this.adminid = adminid;
         this.name = name;
         this.level = level;
@@ -36,7 +36,7 @@ public class admin {
         this.note = note;
     }
 
-    public admin() {
+    public Admin() {
         super();
     }
 

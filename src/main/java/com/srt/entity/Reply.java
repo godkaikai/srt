@@ -2,7 +2,7 @@ package com.srt.entity;
 
 import java.util.Date;
 
-public class reply {
+public class Reply {
     private String reid;
 
     private String result;
@@ -15,7 +15,7 @@ public class reply {
 
     private Date settime;
 
-    public reply(String reid, String result, String reason, String code, String id, Date settime) {
+    public Reply(String reid, String result, String reason, String code, String id, Date settime) {
         this.reid = reid;
         this.result = result;
         this.reason = reason;
@@ -24,7 +24,7 @@ public class reply {
         this.settime = settime;
     }
 
-    public reply() {
+    public Reply() {
         super();
     }
 

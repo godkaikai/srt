@@ -1,6 +1,6 @@
 package com.srt.entity;
 
-public class teacher {
+public class Teacher {
     private String teacherid;
 
     private String teachername;
@@ -17,7 +17,7 @@ public class teacher {
 
     private String password;
 
-    public teacher(String teacherid, String teachername, String teachersex, String teachercollege, String teacherteach, String teacherposition, String teacherphone, String password) {
+    public Teacher(String teacherid, String teachername, String teachersex, String teachercollege, String teacherteach, String teacherposition, String teacherphone, String password) {
         this.teacherid = teacherid;
         this.teachername = teachername;
         this.teachersex = teachersex;
@@ -28,7 +28,7 @@ public class teacher {
         this.password = password;
     }
 
-    public teacher() {
+    public Teacher() {
         super();
     }
 
