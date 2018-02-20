@@ -10,7 +10,7 @@
       <arg column="idcard" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="college" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="major" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="class" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="classnum" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -21,7 +21,7 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    studentid, name, state, sex, idcard, college, major, class, phone, email, password, 
+    studentid, name, state, sex, idcard, college, major, classnum, phone, email, password,
     creattime, updatetime, logintime, note
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

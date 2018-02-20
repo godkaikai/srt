@@ -105,4 +105,9 @@
       note = #{note,jdbcType=VARCHAR}
     where roomid = #{roomid,jdbcType=VARCHAR}
   </update>
+  <select id="selectAllRoom" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    from room_info
+  </select>
 </mapper>

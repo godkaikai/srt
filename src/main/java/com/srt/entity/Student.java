@@ -17,7 +17,7 @@ public class Student {
 
     private String major;
 
-    private String class;
+    private String classnum;
 
     private String phone;
 
@@ -33,7 +33,7 @@ public class Student {
 
     private String note;
 
-    public Student(Integer studentid, String name, String state, String sex, String idcard, String college, String major, String class, String phone, String email, String password, Date creattime, Date updatetime, Date logintime, String note) {
+    public Student(Integer studentid, String name, String state, String sex, String idcard, String college, String major, String classnum, String phone, String email, String password, Date creattime, Date updatetime, Date logintime, String note) {
         this.studentid = studentid;
         this.name = name;
         this.state = state;
@@ -41,7 +41,7 @@ public class Student {
         this.idcard = idcard;
         this.college = college;
         this.major = major;
-        this.class = class;
+        this.classnum = classnum;
         this.phone = phone;
         this.email = email;
         this.password = password;
@@ -111,12 +111,12 @@ public class Student {
         this.major = major == null ? null : major.trim();
     }
 
-    public String getClass() {
-        return class;
+    public String getClassnum() {
+        return classnum;
     }
 
-    public void setClass(String class) {
-        this.class = class == null ? null : class.trim();
+    public void setClassnum(String classnum) {
+        this.classnum = classnum;
     }
 
     public String getPhone() {
